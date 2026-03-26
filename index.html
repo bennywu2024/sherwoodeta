@@ -88,15 +88,15 @@
 <div class="flex flex-col items-end">
 <span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant opacity-70">Current Time</span>
 <div class="flex items-baseline gap-2">
-<span class="text-4xl font-black text-forest-green leading-none tracking-tighter">08:35</span>
-<span class="text-xl font-bold text-forest-green opacity-60">AM</span>
+<span class="text-4xl font-black text-forest-green leading-none tracking-tighter" id="current-time-display">08:35</span>
+<span class="text-xl font-bold text-forest-green opacity-60" id="current-period-display">AM</span>
 </div>
 </div>
 </header>
 <!-- Main Content Area -->
 <main class="flex-1 flex flex-col p-8 gap-8 overflow-y-auto max-w-7xl mx-auto w-full">
 <!-- Route Section 1: NR762 -->
-<section class="bg-surface-container-low rounded-xl border border-black/5 overflow-hidden shadow-lg">
+<section class="bg-surface-container-low rounded-xl border border-black/5 overflow-hidden shadow-lg" id="route-nr762">
 <div class="bg-surface-container-high p-6 flex flex-wrap justify-between items-center border-b border-black/5 gap-4">
 <div class="flex items-center gap-6">
 <div class="bg-forest-green text-on-primary font-black text-3xl px-6 py-2 rounded-lg tracking-tighter">NR762</div>
@@ -106,26 +106,30 @@
 </div>
 </div>
 </div>
-<div class="p-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
+<div class="route-content p-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
 <div class="flex flex-col">
 <span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant mb-2">1st Departure</span>
-<div class="text-4xl font-black text-on-surface opacity-60">08:45 <span class="text-base font-medium">AM</span></div>
+<div class="text-4xl font-black text-on-surface opacity-60">--:-- <span class="text-base font-medium">AM</span></div>
 <div class="mt-1 inline-flex items-center text-xs font-extrabold text-forest-green bg-primary-container px-3 py-1 rounded-full w-fit uppercase tracking-wider">
-    In 10:00 mins
-</div>
+                        --:-- mins
+                    </div>
 </div>
 <div class="flex flex-col border-l border-black/5 pl-8">
 <span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant mb-2">2nd Departure</span>
-<div class="text-4xl font-black text-on-surface opacity-80">09:00 <span class="text-base font-medium opacity-60">AM</span></div>
+<div class="text-4xl font-black text-on-surface opacity-80">--:-- <span class="text-base font-medium opacity-60">AM</span></div>
 </div>
 <div class="flex flex-col border-l border-black/5 pl-8">
 <span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant mb-2">3rd Departure</span>
-<div class="text-4xl font-black text-on-surface opacity-60">10:05 <span class="text-base font-medium opacity-60">AM</span></div>
+<div class="text-4xl font-black text-on-surface opacity-60">--:-- <span class="text-base font-medium opacity-60">AM</span></div>
 </div>
+</div>
+<div class="last-bus-msg hidden p-12 text-center">
+<p class="text-2xl font-black text-error mb-1">尾班車已經開出</p>
+<p class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Last Departure has departed</p>
 </div>
 </section>
 <!-- Route Section 2: NR762A -->
-<section class="bg-surface-container-low rounded-xl border border-black/5 overflow-hidden shadow-lg">
+<section class="bg-surface-container-low rounded-xl border border-black/5 overflow-hidden shadow-lg" id="route-nr762a">
 <div class="bg-surface-container-high p-6 flex flex-wrap justify-between items-center border-b border-black/5 gap-4">
 <div class="flex items-center gap-6">
 <div class="bg-forest-green text-on-primary font-black text-3xl px-6 py-2 rounded-lg tracking-tighter">NR762A</div>
@@ -135,31 +139,127 @@
 </div>
 </div>
 </div>
-<div class="p-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
+<div class="route-content p-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
 <div class="flex flex-col">
 <span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant mb-2">1st Departure</span>
-<div class="text-4xl font-black text-on-surface opacity-60">09:00 <span class="text-base font-medium">AM</span></div>
+<div class="text-4xl font-black text-on-surface opacity-60">--:-- <span class="text-base font-medium">AM</span></div>
 <div class="mt-1 inline-flex items-center text-xs font-extrabold text-forest-green bg-primary-container px-3 py-1 rounded-full w-fit uppercase tracking-wider">
-    In 25:00 mins
-</div>
+                        --:-- mins
+                    </div>
 </div>
 <div class="flex flex-col border-l border-black/5 pl-8">
 <span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant mb-2">2nd Departure</span>
-<div class="text-4xl font-black text-on-surface opacity-80">09:15 <span class="text-base font-medium opacity-60">AM</span></div>
+<div class="text-4xl font-black text-on-surface opacity-80">--:-- <span class="text-base font-medium opacity-60">AM</span></div>
 </div>
 <div class="flex flex-col border-l border-black/5 pl-8">
 <span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-surface-variant mb-2">3rd Departure</span>
-<div class="text-4xl font-black text-on-surface opacity-60">09:30 <span class="text-base font-medium opacity-60">AM</span></div>
+<div class="text-4xl font-black text-on-surface opacity-60">--:-- <span class="text-base font-medium opacity-60">AM</span></div>
 </div>
+</div>
+<div class="last-bus-msg hidden p-12 text-center">
+<p class="text-2xl font-black text-error mb-1">尾班車已經開出</p>
+<p class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Last Departure has departed</p>
 </div>
 </section>
 </main>
 <!-- Footer Information -->
 <footer class="w-full px-8 py-4 bg-surface border-t border-black/5 flex justify-between items-center shrink-0">
-<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant opacity-60">Data Refreshed Every 30s</p>
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant opacity-60">Real-Time Schedule Tracker</p>
 <div class="flex gap-8">
 <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant cursor-pointer hover:text-forest-green transition-colors">Emergency</span>
 <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant cursor-pointer hover:text-forest-green transition-colors">Contact</span>
 </div>
 </footer>
+<script>
+        const schedules = {
+            'NR762': [
+                {h:6, m:[15, 30, 45]}, {h:7, m:[0, 15, 30, 45]}, {h:8, m:[0, 15, 30, 45]}, {h:9, m:[0]},
+                {h:10, m:[5, 20, 40]}, {h:11, m:[0, 20, 40]}, {h:12, m:[0]}, {h:14, m:[5, 20, 40]},
+                {h:15, m:[0, 20, 40]}, {h:16, m:[0]}, {h:18, m:[15, 30, 45]}, {h:19, m:[0, 15, 30, 45]},
+                {h:21, m:[15, 45]}, {h:22, m:[0]}
+            ],
+            'NR762A': [
+                {h:7, m:[30]}, {h:8, m:[0, 30]}, {h:9, m:[0, 15, 30, 45]}, {h:10, m:[0, 30]}, {h:11, m:[0, 30]},
+                {h:12, m:[0, 15, 30, 45]}, {h:13, m:[0, 15, 30, 45]}, {h:14, m:[0, 30]}, {h:15, m:[0, 30]},
+                {h:16, m:[0, 15, 30, 45]}, {h:17, m:[0, 15, 30, 45]}, {h:18, m:[0]}, {h:19, m:[30]},
+                {h:20, m:[0, 15, 30, 45]}, {h:21, m:[0, 30]}, {h:22, m:[0, 15, 30, 45]}, {h:23, m:[0, 15]}
+            ]
+        };
+
+        function getHKTime() {
+            return new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Hong_Kong"}));
+        }
+
+        function formatTime(date) {
+            let h = date.getHours();
+            let m = date.getMinutes();
+            let period = h >= 12 ? 'PM' : 'AM';
+            h = h % 12 || 12;
+            return { 
+                display: `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`, 
+                period 
+            };
+        }
+
+        function getUpcomingDepartures(routeId, now) {
+            const flatSchedule = [];
+            schedules[routeId].forEach(item => {
+                item.m.forEach(min => {
+                    const d = new Date(now);
+                    d.setHours(item.h, min, 0, 0);
+                    flatSchedule.push(d);
+                });
+            });
+            
+            const upcoming = flatSchedule.filter(d => d > now).sort((a, b) => a - b);
+            return upcoming.slice(0, 3);
+        }
+
+        function updateDashboard() {
+            const now = getHKTime();
+            const currentTime = formatTime(now);
+            
+            document.getElementById('current-time-display').textContent = currentTime.display;
+            document.getElementById('current-period-display').textContent = currentTime.period;
+
+            ['NR762', 'NR762A'].forEach(routeId => {
+                const upcoming = getUpcomingDepartures(routeId, now);
+                const card = document.getElementById(`route-${routeId.toLowerCase()}`);
+                const content = card.querySelector('.route-content');
+                const lastMsg = card.querySelector('.last-bus-msg');
+
+                if (upcoming.length === 0) {
+                    content.classList.add('hidden');
+                    lastMsg.classList.remove('hidden');
+                } else {
+                    content.classList.remove('hidden');
+                    lastMsg.classList.add('hidden');
+                    
+                    const departureDivs = content.querySelectorAll(':scope > div');
+                    
+                    upcoming.forEach((depDate, index) => {
+                        const formatted = formatTime(depDate);
+                        const timeSpan = departureDivs[index].querySelector('.text-4xl');
+                        timeSpan.innerHTML = `${formatted.display} <span class="text-base font-medium ${index === 0 ? '' : 'opacity-60'}">${formatted.period}</span>`;
+                        
+                        if (index === 0) {
+                            const diffMs = depDate - now;
+                            const diffMins = Math.floor(diffMs / 60000);
+                            const diffSecs = Math.floor((diffMs % 60000) / 1000);
+                            const countdownDiv = departureDivs[index].querySelector('.mt-1');
+                            countdownDiv.textContent = `In ${diffMins}:${diffSecs.toString().padStart(2, '0')} mins`;
+                        }
+                    });
+
+                    // Clear remaining divs if fewer than 3 departures
+                    for (let i = upcoming.length; i < 3; i++) {
+                        departureDivs[i].classList.add('opacity-0');
+                    }
+                }
+            });
+        }
+
+        setInterval(updateDashboard, 1000);
+        updateDashboard();
+    </script>
 </body></html>
